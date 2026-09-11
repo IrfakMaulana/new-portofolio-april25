@@ -61,7 +61,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           {isSmallScreen
             ? // Render SMALL SCREEN layout
               data.map((item, index) => (
-                <div key={index} className="flex justify-start md:gap-10 pb-10">
+                <div key={index} className="relative flex justify-start md:gap-10 pb-10">
+                  {index < data.length - 1 && (
+                    <div
+                      className="absolute left-8 top-20 bottom-0 w-[2px] bg-gradient-to-b from-blue-500 via-purple-500 to-blue-500"
+                      aria-hidden="true"
+                    />
+                  )}
                   {/* Sticky section with 20% width */}
                   <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 mt-10 self-start w-1/5 max-w-xs lg:max-w-sm md:w-1/5">
                     <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full dark:bg-black flex items-center justify-center">
@@ -104,16 +110,18 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 </div>
               ))}
         </>
-        <div
-          style={{ height: height + "px" }}
-          className="absolute left-8 top-0 z-0 w-[2px] overflow-hidden bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-700 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
-          aria-hidden="true"
-        >
-          <motion.div
-            style={{ height: heightTransform, opacity: opacityTransform }}
-            className="absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-t from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%]"
-          />
-        </div>
+        {!isSmallScreen && (
+          <div
+            style={{ height: height + "px" }}
+            className="absolute left-8 top-0 z-0 w-[2px] overflow-hidden bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-700 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+            aria-hidden="true"
+          >
+            <motion.div
+              style={{ height: heightTransform, opacity: opacityTransform }}
+              className="absolute inset-x-0 top-0 w-[2px] rounded-full bg-gradient-to-t from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%]"
+            />
+          </div>
+        )}
       </div>
     </div>
   );
