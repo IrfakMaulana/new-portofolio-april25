@@ -2,9 +2,10 @@
 
 import React from "react";
 import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 
 const contactLinks = [
-  { label: "Email", href: "mailto:irfakmaulana05@gmail.com" },
+  { label: "Email", href: "mailto:irfakmaulana05@gmail.com", Icon: SiGmail },
   { label: "WhatsApp", href: "https://wa.me/6285850703910", Icon: FaWhatsapp },
   { label: "GitHub", href: "https://github.com/IrfakMaulana", Icon: FaGithub },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/muhammad-irfa-maulana-430a86276", Icon: FaLinkedinIn }
