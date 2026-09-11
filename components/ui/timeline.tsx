@@ -55,7 +55,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0], [0, 1]);
 
   return (
-    <div className="w-full dark:bg-neutral-950  md:px-10" ref={containerRef}>
+    <div className="w-full bg:black  md:px-10" ref={containerRef}>
       <div ref={ref} className="relative max-w-7xl mx-auto ">
         <>
           {isSmallScreen

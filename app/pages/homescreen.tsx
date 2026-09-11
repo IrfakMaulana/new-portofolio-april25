@@ -1,129 +1,23 @@
-import Footer from "@/components/footer";
-import {
-  IconBrandGithub,
-  IconBrandX,
-  IconExchange,
-  IconHome,
-  IconNewSection,
-  IconTerminal2
-} from "@tabler/icons-react";
-import Image from "next/image";
 import { FlipWords } from "@/components/ui/flip-words";
 import { SparklesCore } from "@/components/ui/sparkles";
 
-export default function HomeScreen() {
-  const words1 = ["Hi! I'm"];
-  const words2 = ["Muhammad Irfa' Maulana"];
-  return (
-    <div className="h-screen ">
-      {/* home screen */}
-      <Footer />
-      <div className="h-screen w-full bg-black flex flex-col items-center justify-center overflow-hidden">
-        <h1 className="md:text-5xl text-2xl lg:text-6xl font-bold text-center text-white relative z-20 mt-30">
-          <div className="flex flex-col header-container gap-3">
-          <div className="subtitle-box">
-            <FlipWords duration={3000} words={words1} />
-          </div>
-          <div className="subtitle-box">
-            <FlipWords duration={3000} words={words2} />
-          </div>
-          </div>
-        </h1>
-        <h3 className="md:text-xl text-sm lg:text-xl font-medium text-center relative z-20 text-gray-400 mt-10 max-w-7xl mb-2 lg:mb-4 pl-8 pr-8">
-          <p className="leading-relaxed">
-            A <span className="text-white font-medium">Web Developer</span>{" "}
-            specializing in <span className="text-white">backend</span>{" "}
-            <span className="text-white"></span> development.
-          </p>
-          <p className="leading-relaxed">
-            I thrive on challenges, passionate about{" "}
-            <span className="text-white">learning new skills</span>,{/* </p> */}
-            {/* <p className="leading-relaxed"> */} and{" "}
-            <span className="text-white">dedicated to writing clean</span>,{" "}
-            <span className="text-white">professional code</span>.
-          </p>
-        </h3>
-
-        <div className="w-full h-40 relative">
-          {/* Gradients */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-          <div className="absolute left-1/2 transform -translate-x-1/2 inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-          <div className="absolute left-1/2 transform -translate-x-1/2 inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-          <div className="absolute left-1/2 transform -translate-x-1/2 inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
-
-          {/* Core component */}
-          <SparklesCore
-            background="transparent"
-            minSize={0.1}
-            maxSize={1}
-            particleDensity={2000}
-            className="w-full h-full"
-            particleColor="#FFFFFF"
-          />
-
-          {/* Radial Gradient to prevent sharp edges */}
-          <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-const links = [
-  {
-    title: "Home",
-    icon: (
-      <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "#"
-  },
-
-  {
-    title: "Products",
-    icon: (
-      <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "#"
-  },
-  {
-    title: "Components",
-    icon: (
-      <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "#"
-  },
-  {
-    title: "Aceternity UI",
-    icon: (
-      <Image
-        src="https://assets.aceternity.com/logo-dark.png"
-        width={20}
-        height={20}
-        alt="Aceternity Logo"
-      />
-    ),
-    href: "#"
-  },
-  {
-    title: "Changelog",
-    icon: (
-      <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "#"
-  },
-
-  {
-    title: "Twitter",
-    icon: (
-      <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "#"
-  },
-  {
-    title: "GitHub",
-    icon: (
-      <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-    ),
-    href: "#"
-  }
+const navigation = [
+  ["Tentang", "#about"], ["Pengalaman", "#experience"], ["Keahlian", "#skills"], ["Proyek", "#projects"], ["Kontak", "#contact"]
 ];
+
+export default function HomeScreen() {
+  return <section className="relative min-h-screen overflow-hidden bg-black" id="home">
+    <header className="relative z-30 mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
+      <a href="#home" className="text-sm font-bold tracking-wide text-white">IM<span className="text-indigo-300">.</span></a>
+      <nav className="hidden items-center gap-6 text-sm text-zinc-400 md:flex" aria-label="Navigasi utama">{navigation.map(([label, href]) => <a key={href} href={href} className="transition hover:text-white">{label}</a>)}</nav>
+      <a href="#contact" className="rounded-full border border-white/20 px-4 py-2 text-sm font-medium text-white transition hover:border-indigo-300 hover:bg-white/5">Hubungi Saya</a>
+    </header>
+    <div className="relative z-20 mx-auto flex min-h-[calc(100vh-76px)] max-w-4xl flex-col items-center justify-center px-5 pb-24 text-center sm:px-8">
+      <p className="mb-5 text-sm font-medium tracking-[.2em] text-indigo-200 uppercase">Portfolio 2026</p>
+      <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl lg:text-7xl"><span className="block text-zinc-300"><FlipWords duration={3000} words={["Halo, saya"]} /></span><span className="mt-2 block"><FlipWords duration={3000} words={["Muhammad Irfa' Maulana"]} /></span></h1>
+      <p className="mt-7 max-w-2xl text-base leading-7 text-zinc-400 sm:text-lg">Lulusan <strong className="font-medium text-white">S1 Teknik Informatika</strong> dengan pengalaman pengembangan aplikasi web. Terbuka untuk berbagai kesempatan kerja, siap belajar, beradaptasi, dan bekerja sama dalam tim.</p>
+      <div className="mt-9 flex flex-wrap justify-center gap-3"><a href="#projects" className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-indigo-100">Lihat Proyek</a><a href="https://www.linkedin.com/in/muhammad-irfa-maulana-430a86276" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:border-indigo-300 hover:bg-white/5">LinkedIn</a></div>
+    </div>
+    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64"><SparklesCore background="transparent" minSize={0.1} maxSize={1} particleDensity={900} className="h-full w-full" particleColor="#c7d2fe" /><div className="absolute inset-0 bg-black [mask-image:radial-gradient(500px_180px_at_bottom,transparent_15%,black)]" /></div>
+  </section>;
+}

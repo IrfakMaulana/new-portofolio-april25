@@ -8,7 +8,7 @@ import { PiGitForkBold } from "react-icons/pi";
 import { ButtonsCard } from "@/components/ui/tailwindcss-buttons";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card.tsx";
 
-const GITHUB_USERNAME = "lassiecoder";
+const GITHUB_USERNAME = "IrfakMaulana";
 
 const ThreeDCard = () => {
   const [repoStats, setRepoStats] = useState<{
@@ -19,7 +19,7 @@ const ThreeDCard = () => {
     const fetchRepoStats = async () => {
       try {
         const repoData = await Promise.all(
-          dummyData.map(async (item) => {
+          dummyData.filter((item) => item.repo).map(async (item) => {
             const response = await fetch(
               `https://api.github.com/repos/${GITHUB_USERNAME}/${item.repo}`
             );
@@ -50,17 +50,13 @@ const ThreeDCard = () => {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 mt-20">
-      <div className="px-4">
-        <h2 className="md:text-4xl text-2xl lg:text-4xl font-bold text-left pb-12 text-white">
-          Projects
-        </h2>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 sm:gap-3">
+    <section className="max-w-7xl mx-auto px-5 sm:px-8 py-20" id="projects">
+      <p className="text-sm font-medium tracking-[.18em] uppercase text-indigo-200">Portfolio</p><h2 className="mt-3 text-3xl md:text-4xl font-bold text-left pb-10 text-white">Proyek Pilihan</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {dummyData.map((item, index) => (
           <div key={index}>
             <CardContainer className="inter-var font-medium">
-              <CardBody className="bg-black relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-white/[0.2] w-auto h-[400px] sm:h-[420px] lg:h-[450px] rounded-xl p-6 border flex flex-col justify-between">
+              <CardBody className="bg-white/[.03] relative group/card border-white/10 w-auto h-[390px] rounded-2xl p-5 border flex flex-col justify-between transition-colors hover:border-indigo-300/40">
                 {/* Title */}
                 <CardItem
                   translateZ="50"
@@ -84,9 +80,8 @@ const ThreeDCard = () => {
                     src={item.image}
                     height={1000}
                     width={1000}
-                    className="h-40 sm:h-44 md:h-48 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="thumbnail"
-                    priority
+                    className="h-40 w-full object-cover rounded-xl transition duration-500 group-hover/card:scale-[1.02]"
+                    alt={`Tampilan proyek ${item.title}`}
                   />
                 </CardItem>
 
@@ -110,7 +105,9 @@ const ThreeDCard = () => {
                     </div>
                   )}
 
-                  <Link href={item.link} target="_blank">
+                  {item.projectType === "work-project" && !item.repo ? (
+                    <span className="text-xs text-zinc-500">Proyek internal</span>
+                  ) : <Link href={item.link} target="_blank">
                     <ButtonsCard>
                       <button className="relative inline-flex h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
                         <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
@@ -119,14 +116,14 @@ const ThreeDCard = () => {
                         </span>
                       </button>
                     </ButtonsCard>
-                  </Link>
+                  </Link>}
                 </div>
               </CardBody>
             </CardContainer>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -134,39 +131,55 @@ export default ThreeDCard;
 
 const dummyData = [
   {
+    title: "Platform E-commerce Sumber Wangi",
+    description: "Platform e-commerce perusahaan yang dikembangkan hingga tahap deployment.",
+    image: "/assets/project/project-5.PNG",
+    link: "https://sumberwangi.id",
+    repo: "",
+    projectType: ""
+  },
+  {
+    title: "Sumberwangi HR App",
+    description: "Aplikasi HR internal dengan fitur pemantauan lokasi kendaraan secara real-time.",
+    image: "/assets/project/project-6.PNG",
+    link: "",
+    repo: "",
+    projectType: "work-project"
+  },
+  {
     title: "coffee shop website (landing page)",
     description:
       "simple landing page (UKM website) selling coffee online, using a WhatsApp ordering system",
     image: "/assets/project/project-1.png",
-    link: "https://github.com/irfakmy/kedai-website",
-    repo: "kedai-website",
-    projectType: ""
+    link: "https://github.com/IrfakMaulana/kedai-website",
+    repo: "",
+    projectType: "work-project"
   },
   {
     title: "E-commerce website",
     description:
       "online shopping website, using laravel + react inertia, integrated with payment gateway",
     image: "/assets/project/project-2.png",
-    link: "https://github.com/irfakmy/simple-ecommerce-react-inertia",
-    repo: "simple-ecommerce-react-inertia",
-    projectType: ""
+    link: "https://github.com/IrfakMaulana/simple-ecommerce-react-inertia",
+    repo: "",
+    projectType: "work-project"
   },
   {
     title: "Anime Metadata Website",
     description:
       "list showing metadata, anime list (trailers, episodes, on-going anime, trending), integrated by API from jikan.moe",
     image: "/assets/project/project-3.png",
-    link: "https://github.com/irfakmy/larafak-anime",
-    repo: "larafak-anime",
-    projectType: ""
+    link: "https://github.com/IrfakMaulana/larafak-anime",
+    repo: "",
+    projectType: "work-project"
   },
   {
     title: "Game top-up website",
     description:
       "This platform provides top-up services for many popular games, both for mobile and PC games",
     image: "/assets/project/project-4.png",
-    link: "https://github.com/irfakmy/topup",
-    repo: "topup",
-    projectType: ""
+    link: "https://github.com/IrfakMaulana/topup",
+    repo: "",
+    projectType: "work-project"
   }
 ];

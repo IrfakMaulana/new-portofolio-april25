@@ -4,10 +4,8 @@ import "./globals.css";
 import {} from "next/font/google";
 
 export const metadata: Metadata = {
-  title:
-    "Portfolio | Muhammad Irfa' Maulana (irfakkk06) |  Web Developer",
-  description:
-    "merging creativity with functionality seamlessly."
+  title: "Muhammad Irfa' Maulana | Portfolio",
+  description: "Portfolio Muhammad Irfa' Maulana, lulusan S1 Teknik Informatika dengan pengalaman pengembangan aplikasi web dan terbuka untuk berbagai kesempatan kerja."
 };
 
 const montserrat = Montserrat({
@@ -22,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable}`}>
+    <html lang="id" className={`${montserrat.variable}`}>
       <body className={montserrat.className}>{children}</body>
     </html>
   );
