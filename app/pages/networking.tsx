@@ -3,11 +3,11 @@
 import React from "react";
 
 const skillGroups = [
-  ["Backend", "PHP · Laravel · NestJS · Node.js"],
+  ["Backend", "PHP · Python · Laravel · NestJS · Node.js · Express.js"],
   ["Frontend", "JavaScript · TypeScript · React.js · Next.js"],
-  ["Database", "MySQL · PostgreSQL · Prisma ORM"],
+  ["Database", "MySQL · PostgreSQL · Prisma ORM · Firebird"],
   ["DevOps", "Docker · Git · GitHub"],
-  ["Kemampuan Profesional", "Web Development · Database Design · Analisis Data · Pengembangan Sistem"],
+  ["Kemampuan Profesional", "Web Development · Database Design · Analisis Data · Pengembangan Sistem · Excel Makro VBA"],
   ["Kemampuan Pendukung", "Microsoft Office · Problem Solving · Presentasi · Komunikasi · Customer Service · Analisa Kebutuhan Pengguna · Kerja Sama Tim · Manajemen Tanggung Jawab"]
 ];
 
