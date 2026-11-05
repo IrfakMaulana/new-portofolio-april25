@@ -131,6 +131,30 @@ export default ThreeDCard;
 
 const dummyData = [
   {
+    title: "WhatsApp Pre-Order Automation",
+    description: "Bot whatsapp X Gemini AI membantu pendataan otomatis dari Group PO ke Google Spreadsheets.",
+    image: "/assets/project/project-7.PNG",
+    link: "",
+    repo: "",
+    projectType: "work-project"
+  },
+  {
+    title: "Excel VBA program",
+    description: "Pendataan otomatis operasional harian menggunakan aplikasi Makro VBA.",
+    image: "/assets/project/project-9.PNG",
+    link: "",
+    repo: "",
+    projectType: "work-project"
+  },
+  {
+    title: "WhatsApp Bot Autosender",
+    description: "Pengirim pesan otomatis membantu mengirimkan pengumuman internal perusahaan kepada seluruh karyawan.",
+    image: "/assets/project/project-8.PNG",
+    link: "",
+    repo: "",
+    projectType: "work-project"
+  },
+  {
     title: "Platform E-commerce Sumber Wangi",
     description: "Platform e-commerce perusahaan yang dikembangkan hingga tahap deployment.",
     image: "/assets/project/project-5.PNG",

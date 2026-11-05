@@ -4,6 +4,18 @@ import React from "react";
 import { Timeline } from "@/components/ui/timeline";
 
 const experiences = [
+  {
+    company: "CV Wahana Sejahtera Foods",
+    role: "IT Programmer",
+    period: "Oktober 2026 – Sekarang",
+    points: [
+      "Mengembangkan sistem otomatisasi Pre-Order WhatsApp untuk mengekstrak, memproses, dan mengintegrasikan pesan pesanan ke dalam spreadsheet secara terstruktur.",
+      "Mengembangkan otomatisasi pembuatan Purchase Order menggunakan Excel VBA yang terintegrasi dengan Accurate 5 dan database Firebird.",
+      "Mengembangkan otomatisasi laporan produksi harian menggunakan Excel VBA, termasuk pengolahan data, perhitungan, dan penyusunan laporan gabungan operasional.",
+      "Melakukan eksplorasi database Firebird, penulisan query SQL, serta analisis integrasi database untuk mendukung pengembangan aplikasi perusahaan.",
+      "Melakukan pemeliharaan, analisis, dan debugging aplikasi Excel VBA untuk meningkatkan efisiensi proses bisnis dan akurasi pelaporan."
+    ]
+  },
   { company: "PT Sumber Wangi Masa", role: "Fullstack Developer", period: "Maret 2026 – Mei 2026", points: ["Membangun sistem absensi berbasis web untuk ±50 karyawan.", "Mengembangkan verifikasi FaceID, scan barcode berbasis radius kantor, dan GPS tracking untuk karyawan driver.", "Membangun platform e-commerce perusahaan dari pengembangan hingga deployment.", "Berkontribusi pada pengembangan modul ERP Internal, khususnya modul HR."] },
   { company: "PT Vipayment Digital Solution", role: "Backend Developer (Internship)", period: "Mei 2025 – Juli 2025", points: ["Membangun website finance menggunakan teknologi backend modern.", "Berkolaborasi dengan tim dalam merancang dan mengimplementasikan REST API."] },
   { company: "YEZZPAY", role: "Staff Customer Service (Part-time)", period: "April 2025 – Juni 2025", points: ["Melayani pelanggan toko game online yang berkolaborasi dengan mitra perusahaan internasional di Turki.", "Meningkatkan komunikasi profesional dalam lingkungan kerja multikultural.", "Melakukan pelaporan keluhan pelanggan dan hasil penjualan setiap hari."] },
